@@ -1,6 +1,7 @@
 Minimal code piece to reproduce our Pytorch XLA error
 
+On a multi-GPU machine:
 ```
-export CUDA_VISIBLE_DEVICES=1,2
+export CUDA_VISIBLE_DEVICES=0,1
 PJRT_DEVICE=CUDA GPU_NUM_DEVICES=2 python xla_entry.py
 ```
