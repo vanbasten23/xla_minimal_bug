@@ -4,7 +4,7 @@ import torch_xla.core.xla_model as xm
 import torch_xla.distributed.parallel_loader as pl
 
 
-# xm.is_master_ordinal() # remove this line will make the code work but we really need it for certain reason in our actual codebase
+xm.is_master_ordinal() # remove this line will make the code work but we really need it for certain reason in our actual codebase
 
 def naive_worker_init_fn(worker_id: int) -> None:
     pass
