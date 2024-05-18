@@ -35,9 +35,10 @@ def main() -> None:
         sampler=sampler,
         collate_fn=collator,
         num_workers=2,
-        worker_init_fn=worker_init_fn,
+        # worker_init_fn=worker_init_fn,
     )
     dataloader = pl.MpDeviceLoader(dataloader, xm.xla_device())
     print("healthy before batch")
-    batch = next(iter(dataloader))
+    for data, target in dataloader:
+        pass
     print("healthy after batch")
